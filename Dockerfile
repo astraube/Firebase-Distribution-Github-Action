@@ -3,8 +3,7 @@ FROM node:current-alpine3.16
 WORKDIR /app
 COPY . /app
 
-RUN 
-    apk update
+RUN apk update
     && apk add git 
     && apk add npm 
     && npm install npm@8.17.0 -g
