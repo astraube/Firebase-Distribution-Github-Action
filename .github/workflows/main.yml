@@ -49,4 +49,7 @@ jobs:
           file: ApiDemos-debug.apk
           debug: true
           serviceCredentialsFile: credential_file.json
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.1.1
+
 
