@@ -19,5 +19,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
+            docker login --username straucorp --password dckr_pat_DfI2OokaoWFlCP21bWbskV4t9HU
             docker build . --file Dockerfile --tag firebase-distribution-github-action:$(date +%s)
             docker push straucorp/firebase-distribution-github-action:$(date +%s)
