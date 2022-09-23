@@ -1,11 +1,14 @@
-FROM node:18-alpine3.16
+FROM node:current-alpine3.16
 
 WORKDIR /app
 COPY . /app
 
-RUN yarn global add firebase-tools \
-    && apk update \
-    && apk add git 
+RUN 
+    apk update
+    apk add git 
+    apk add npm 
+    npm install npm@8.17.0 -g
+    npm install firebase-tools -g
 
 RUN chmod +x /app/entrypoint.sh
 
